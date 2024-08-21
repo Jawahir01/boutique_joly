@@ -27,6 +27,11 @@ SECRET_KEY = 'django-insecure-2in3c#nqhz--54npe+$u5vd2f237gv_6x(31(jh_rh@j_fga98
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-jawahir01-boutiquejoly-tusjmqot8t4.ws.codeinstitute-ide.net']
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.codeinstitute-ide.net/',
+    'https://*.herokuapp.com'
+]
                 
 # Application definition
 
