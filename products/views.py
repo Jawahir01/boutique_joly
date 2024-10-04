@@ -56,8 +56,18 @@ def all_products(request):
 
 def product_detail(request, product_id):
     """ A view to show indivisual product details """
-    product = get_object_or_404(Product, pk=product_id)
+    
+    """ These lines were written in the shell during the vedio """
+    kdbb = ['kitchen_dinnig', 'bed_bath']
+    clothes = Product.objects.exclude(category__name__in=kdbb)  
+    for item in clothes:
+        item.has_sizes=True
+        item.save()
 
+    Product.objects.filter(has_sizes=True)
+    """ Endof code """
+
+    product = get_object_or_404(Product, pk=product_id)
     context = {
         'product' : product,
     }
