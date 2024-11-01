@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-2in3c#nqhz--54npe+$u5vd2f237gv_6x(31(jh_rh@j_fga98
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-jawahir01-boutiquejoly-vu91hlqzy0j.ws-eu116.gitpod.io']
+ALLOWED_HOSTS = ['8000-jawahir01-boutiquejoly-7ul9ogyfhqa.ws.codeinstitute-ide.net']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://*.codeinstitute-ide.net/',
@@ -173,8 +173,12 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# Stripe
 FREE_DELIVERY_THRESHOLD = 50
 STANDARD_DELIVERY_PERCENTAGE = 5
+STRIPE_CURRENCY = 'usd'
+STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', '')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
